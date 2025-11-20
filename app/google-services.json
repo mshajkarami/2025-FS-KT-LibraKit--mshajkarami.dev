@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "782353616960",
+    "project_id": "bookstack-b5bec",
+    "storage_bucket": "bookstack-b5bec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782353616960:android:825520274f90e2aa8b0fa5",
+        "android_client_info": {
+          "package_name": "dev.mshajkarami.fs.kt.bookstack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfG3AUJAKsXqWdbuLGVcZLgFpsgYL85B8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

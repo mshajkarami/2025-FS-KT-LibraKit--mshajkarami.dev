@@ -1,0 +1,26 @@
+package dev.mshajkarami.fs.kt.bookstack.data.di
+
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import javax.inject.Singleton
+
+@Module
+@InstallIn
+object HiltModule {
+
+    @Provides
+    @Singleton
+    fun provideRealtimeDatabase(): FirebaseDatabase {
+        return FirebaseDatabase.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseStorage(): FirebaseStorage {
+        return FirebaseStorage.getInstance()
+    }
+
+}

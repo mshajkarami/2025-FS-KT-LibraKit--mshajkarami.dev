@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="dev.mshajkarami.fs.kt.bookstack" />
+                  <option name="mobileSdkAppId" value="1:782353616960:android:825520274f90e2aa8b0fa5" />
+                  <option name="projectId" value="bookstack-b5bec" />
+                  <option name="projectNumber" value="782353616960" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
