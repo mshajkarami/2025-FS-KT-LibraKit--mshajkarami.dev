@@ -37,6 +37,46 @@ class ViewModel @Inject constructor(val repo : AllBookRepository) : ViewModel() 
             }
         }
     }
+    fun bringCategories(){
+        viewModelScope.launch {
+            repo.getAllCategory().collect {
+                when(it){
+                    is ResultState.Loading -> {
+                        _state.value = ItemState(isLoading = true)
+                    }
+
+                    is ResultState.Success -> {
+                        _state.value = ItemState(category = it.data)
+                    }
+
+                    is ResultState.Error -> {
+                        _state.value = ItemState(error = it.exception.localizedMessage)
+                    }
+                }
+            }
+        }
+    }
+
+    fun bringAllBooksByCategories(category : String){
+        viewModelScope.launch {
+            repo.getAllBooksByCategory(category).collect {
+                when(it){
+                    is ResultState.Loading -> {
+                        _state.value = ItemState(isLoading = true)
+                    }
+
+                    is ResultState.Success -> {
+                        _state.value = ItemState(items = it.data)
+                    }
+
+                    is ResultState.Error -> {
+                        _state.value = ItemState(error = it.exception.localizedMessage)
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 data class ItemState(
