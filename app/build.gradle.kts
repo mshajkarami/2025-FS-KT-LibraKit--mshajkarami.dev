@@ -68,6 +68,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
     // My Library
 
     // Additional icons Compose
@@ -91,5 +92,6 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
 
     // PDF
-//    implementation("io.github.grizz191:bouquet:1.1.2")
+    implementation("io.github.grizzi91:bouquet:1.1.2")
+
 }
