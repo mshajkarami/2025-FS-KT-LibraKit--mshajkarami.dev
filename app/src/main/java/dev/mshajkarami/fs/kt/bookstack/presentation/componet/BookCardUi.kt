@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.SubcomposeAsyncImage
+import dev.mshajkarami.fs.kt.bookstack.presentation.effects.ImageAnimation
 
 @Composable
 fun BookCardUi(
@@ -62,7 +63,7 @@ fun BookCardUi(
                         .size(100.dp)
                         .clip(RoundedCornerShape(8.dp)),
                 loading = {
-
+                    ImageAnimation()
                 },
                 error = {
                     Text(text = " Error loading image")

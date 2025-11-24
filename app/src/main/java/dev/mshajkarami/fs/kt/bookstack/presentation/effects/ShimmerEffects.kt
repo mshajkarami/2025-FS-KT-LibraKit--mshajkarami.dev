@@ -130,14 +130,14 @@ fun ShimmerGridItem(brush: Brush) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun SimmerGridItemPreviewer(){
+fun SimmerGridItemPreviewer() {
 
-    ShimmerGridItem(brush = Brush.linearGradient(listOf(Color.White, Color.LightGray,Color.White)))
+    ShimmerGridItem(brush = Brush.linearGradient(listOf(Color.White, Color.LightGray, Color.White)))
 
 }
 
 @Composable
-fun CategoryShimmer(){
+fun CategoryShimmer() {
 
     val shimmerColors = listOf(
         Color.LightGray.copy(alpha = 0.6f),
@@ -199,4 +199,42 @@ fun CategoryShimmer(){
         }
 
     }
+}
+
+@Composable
+fun ImageAnimation() {
+
+    val shimmersColors = listOf(
+        Color.LightGray.copy(alpha = 0.6f),
+        Color.LightGray.copy(alpha = 0.2f),
+        Color.LightGray.copy(alpha = 0.6f),
+    )
+
+    val transition = rememberInfiniteTransition()
+    val translateAnimation = transition.animateFloat(
+        initialValue = 0f,
+        targetValue = 1000f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(
+                delayMillis = 1000,
+                easing = FastOutSlowInEasing
+            )
+        ),
+        label = ""
+    )
+
+    val brush = Brush.linearGradient(
+        colors = shimmersColors,
+        start = Offset(10f, 10f),
+        end = Offset(translateAnimation.value, translateAnimation.value)
+    )
+
+    Spacer(
+        modifier =
+            Modifier
+                .size(80.dp)
+                .clip(RoundedCornerShape(8.dp))
+    )
+
+    ShimmerGridItem(brush)
 }
