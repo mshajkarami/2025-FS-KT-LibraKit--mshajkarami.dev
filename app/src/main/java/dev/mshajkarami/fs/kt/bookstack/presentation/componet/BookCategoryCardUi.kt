@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.SubcomposeAsyncImage
+import dev.mshajkarami.fs.kt.bookstack.presentation.navigation.Routes
 
 @Composable
 fun BookCategoryCardUi(
@@ -33,6 +34,7 @@ fun BookCategoryCardUi(
             .padding(8.dp)
             .clickable {
                 navHostController.navigate(
+                    Routes.BooksByCategory(category)
 
                 )
             }

@@ -11,7 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
+import dev.mshajkarami.fs.kt.bookstack.presentation.navigation.NavGraph
 import dev.mshajkarami.fs.kt.bookstack.ui.theme.BookStackTheme
 
 @AndroidEntryPoint
@@ -21,29 +23,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BookStackTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Scaffold(modifier = Modifier.fillMaxSize()) {
+                    innerPadding ->
+
+                    val navHostController = rememberNavController()
+                    NavGraph(navHostController = navHostController)
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BookStackTheme {
-        Greeting("Android")
     }
 }

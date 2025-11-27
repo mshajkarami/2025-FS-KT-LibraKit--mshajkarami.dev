@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.SubcomposeAsyncImage
 import dev.mshajkarami.fs.kt.bookstack.presentation.effects.ImageAnimation
+import dev.mshajkarami.fs.kt.bookstack.presentation.navigation.Routes
 
 @Composable
 fun BookCardUi(
@@ -41,7 +42,7 @@ fun BookCardUi(
             .padding(8.dp)
             .clickable {
                 navHostController.navigate(
-                    //TODO() add data to path
+                    Routes.ShowPdfScreen(url = bookUrl)
                 )
             }
     ) {
